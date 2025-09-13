@@ -8,9 +8,9 @@ const initialState = {
     score: 0,
     questions: [],
     loading: true,
-};
+}
 
-const reducer=(state, action) =>{
+const reducer = (state, action) => {
     switch (action.type) {
         case "SET_QUESTIONS":
             return {
@@ -41,11 +41,13 @@ const reducer=(state, action) =>{
 }
 
 function QuizProvider({ children }) {
+
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
         api.get("/questio")
-            .then((res) => {const mm = res.data.map((q) => ({
+            .then((res) => {
+                const mm = res.data.map((q) => ({
                     question: q.question,
                     options: q.answers,
                     correctAnswer: q.correctAnswer,

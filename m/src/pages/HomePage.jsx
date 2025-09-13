@@ -2,14 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+
     const navigate = useNavigate();
+
     const handleStart = () => {
         navigate("/quiz");
     }
 
     return (
-        <div className="bg-purple-500 h-screen flex items-center justify-center">
-            <button className="rounded-xl border-none text-4xl text-white bg-purple-800 h-[60px] w-[180px] hover:bg-purple-900 transition-transform hover:scale-110" onClick={handleStart} > Start Quiz </button>
+        <div className="h-screen flex items-center justify-center bg-gradient-to-br from-purple-500 to-purple-700">
+            <button onClick={handleStart} className="px-8 py-3 rounded-2xl text-3xl font-semibold text-white bg-purple-800 hover:bg-purple-900 shadow-lg transition-transform duration-300 hover:scale-110" > Start Quiz </button>
         </div>
     )
 }
