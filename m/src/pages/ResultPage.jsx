@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useContext } from "react";
 import { QuizContext } from "../QuizContext";
 import { useNavigate } from "react-router-dom";
 

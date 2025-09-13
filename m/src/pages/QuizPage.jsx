@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { QuizContext } from "../QuizContext";
 
 function QuizPage() {
 
     const { state, dispatch } = useContext(QuizContext);
-    const navigate = useNavigate();
     const { currentQuestion, questions } = state;
     const question = questions[currentQuestion];
+    const navigate = useNavigate();
 
     if (questions.length === 0) return <h2 className="text-white text-2xl">Loading...</h2>
 
